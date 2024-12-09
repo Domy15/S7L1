@@ -28,6 +28,7 @@ console.log(user1.whoIsOlder(user2))
 const form = document.getElementById("form");
 const ul = document.getElementById("animalList");
 const pets = [];
+let bool;
 
 class Pet {
     constructor(_petName, _ownerName, _species, _breed) {
@@ -40,7 +41,10 @@ class Pet {
     isSameOwner() {
         for (let i = 0; i < pets.length; i++) {
             if (this.ownerName === pets[i].ownerName) {
-                return true;
+                console.log(true);
+                
+            } else {
+                console.log(false);
             }
         }
     }
@@ -56,9 +60,9 @@ function addPet(e) {
     const breed = document.getElementById("breed").value;
     const newPet = new Pet(petName, ownerName, species, breed);
     
+    newPet.isSameOwner();
     pets.push(newPet);
     printPets();
-    console.log(newPet.isSameOwner());
 }
 
 function printPets() {
